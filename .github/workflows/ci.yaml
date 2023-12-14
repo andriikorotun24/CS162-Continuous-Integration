@@ -37,4 +37,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: andriikorotun24/CS162-Countinuous-Integration:latest  # Replace with your Docker Hub details
+        tags: andriikorotun24/cs162-continuous-integration:latest  # Replace with your Docker Hub details
