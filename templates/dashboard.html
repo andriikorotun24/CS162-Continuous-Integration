@@ -1,0 +1,28 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="row">
+  <div class="col">
+    <h2>Dashboard</h2>
+    <form method="post" action="{{ url_for('submit_expression') }}">
+      <div class="mb-3">
+        <label for="expression" class="form-label">Enter Expression</label>
+        <input
+          type="text"
+          class="form-control"
+          id="expression"
+          name="expression"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-success">Evaluate</button>
+    </form>
+    <h3 class="mt-4">Expression History</h3>
+    <ul class="list-group mt-2">
+      {% for expression in expressions %}
+      <li class="list-group-item">
+        {{ expression.expression }} = {{ expression.result }}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endblock %}
